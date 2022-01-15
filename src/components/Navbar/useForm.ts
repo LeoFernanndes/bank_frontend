@@ -1,0 +1,27 @@
+import { useState } from "react";
+
+// useForm functional componen
+const useForm = (callback: any, initialState = {}) => {
+    const [values, setValues] = useState(initialState);
+
+    // onChange
+    const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(`Changed ${ JSON.stringify(values) }`)
+        setValues({ ...values, [event.target.name]: event.target.value });
+    };
+
+    // onSubmit
+    const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        await callback(); // triggering the callback
+    };
+
+    // return values
+    return {
+        onChange,
+        onSubmit,
+        values,
+    };
+}
+
+export { useForm }
