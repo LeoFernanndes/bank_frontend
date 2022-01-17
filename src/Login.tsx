@@ -1,14 +1,14 @@
 import React from 'react';
 import GlobalStyle from "./styles/global"
-import Register from './components/Register'
+import Login from './components/Login';
 import TopNavbar from './components/Navbar';
 
-const RegisterApp:React.FC = ()=> (
+const LoginApp:React.FC = ()=> (
   <>
   <GlobalStyle/>
   <TopNavbar/>
-  <Register/>
+  <Login/>
   </>
 )
 
-export default RegisterApp;
+export default LoginApp;
